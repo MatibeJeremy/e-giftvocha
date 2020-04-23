@@ -1,0 +1,14 @@
+[
+  {
+    "type": "Overnight",
+    "price": 25.99
+  },
+  {
+    "type": "2-Days",
+    "price": 9.99
+  },
+  {
+    "type": "M-Pesa",
+    "price": 2.99
+  }
+]

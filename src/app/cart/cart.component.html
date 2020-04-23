@@ -1,0 +1,47 @@
+<div class=" mt-4 flex items-center bg-gray-400">
+    <div class="pl-4">
+        <h2 class="p-4 font-italic text-3xl text-pink-700">Shopping Cart</h2>
+
+    </div>
+</div>
+
+
+<div class="text-blue-400 float-right">
+    <a routerLink="/shipping" class="text-blue-400" >
+        Distribution Service >
+    </a>
+</div>
+<div class="flex items-center pt-6  ">
+
+    <div *ngFor="let item of items" class="px-4 py-4 hover:bg-gray-400">
+        <h3 class="pl-5 text-xl text-pink-700 ">{{ item.name }}</h3>
+        <h4 class="pt-2 text-green-600 px-4 py-4">{{ item.price | currency }}</h4>
+    </div>
+</div>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)" class="px-4 py-4">
+
+    <div class="relative pb-4">
+        <label for="name" class=" absolute text-blue-500 text-xs uppercase font-bold pt-2"> Name </label>
+
+        <input id="name"  type="text" class="pt-8 w-full border-b text-gray-900 pb-2 focus:outline-none focus:border-blue-400"
+               placeholder="Your Name" formControlName="name">
+
+    </div>
+
+    <div class="relative pb-4">
+        <label for="phoneNumber" class=" absolute text-blue-500 text-xs uppercase font-bold pt-2"> Phone Number </label>
+
+        <input id="phoneNumber"  type="number" class="pt-8 w-full border-b text-gray-900 pb-2 focus:outline-none focus:border-blue-400"
+               placeholder="Mobile Phone" formControlName="phoneNumber">
+
+    </div>
+
+
+    <div class="justify-end flex">
+
+        <button type="submit" class="bg-blue-500 py-2 rounded px-4 text-white hover:bg-blue-400">
+            Purchase
+        </button>
+    </div>
+</form>
+
